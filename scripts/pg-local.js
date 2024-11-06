@@ -1,3 +1,4 @@
+const process = require('node:process')
 const { Client } = require('pg')
 
 const client = new Client(process.env.POSTGRES_URL)

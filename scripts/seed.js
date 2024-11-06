@@ -1,3 +1,4 @@
+const process = require('node:process')
 const { db } = require('@vercel/postgres')
 const bcrypt = require('bcrypt')
 const {
