@@ -4,7 +4,10 @@
     "build": "next build",
     "dev": "next dev --turbo",
     "start": "next start",
-    "seed": "node -r dotenv/config ./scripts/seed.js"
+    "seed": "node -r dotenv/config ./scripts/seed.js",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+
   },
   "dependencies": {
     "@heroicons/react": "^2.1.4",
@@ -26,10 +29,12 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
+    "@antfu/eslint-config": "^3.8.0",
     "@types/bcrypt": "^5.0.2",
     "@types/node": "20.14.8",
     "@types/react": "npm:types-react@19.0.0-rc.1",
-    "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1"
+    "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1",
+    "eslint": "^9.14.0"
   },
   "pnpm": {
     "overrides": {
