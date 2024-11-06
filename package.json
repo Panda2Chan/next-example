@@ -7,7 +7,6 @@
     "seed": "node -r dotenv/config ./scripts/seed.js",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
-
   },
   "dependencies": {
     "@heroicons/react": "^2.1.4",
