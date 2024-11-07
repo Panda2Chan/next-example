@@ -1,8 +1,11 @@
+import type { PageProps } from '@/.next/types/app/page'
 import { fetchCustomers, fetchInvoiceById } from '@/app/lib/data'
 import Breadcrumbs from '@/app/ui/invoices/breadcrumbs'
 import Form from '@/app/ui/invoices/edit-form'
 
-export default async function Page({ params }: { params: { id: string } }) {
+type Props = PageProps & { params: { id: string } }
+
+export default async function Page({ params }: Props) {
   const id = params.id
 
   const [invoice, customers] = await Promise.all([

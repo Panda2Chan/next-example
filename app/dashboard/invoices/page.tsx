@@ -1,3 +1,4 @@
+import type { PageProps } from '@/.next/types/app/page'
 import { fetchInvoicesPages } from '@/app/lib/data'
 import { lusitana } from '@/app/ui/fonts'
 import { CreateInvoice } from '@/app/ui/invoices/buttons'
@@ -7,14 +8,14 @@ import Search from '@/app/ui/search'
 import { InvoicesTableSkeleton } from '@/app/ui/skeletons'
 import { Suspense } from 'react'
 
-export default async function Page({
-  searchParams,
-}: {
+type Props = PageProps & {
   searchParams?: {
     query?: string
     page?: string
   }
-}) {
+}
+
+export default async function Page({ searchParams }: Props) {
   const query = searchParams?.query || ''
   const currentPage = Number(searchParams?.page) || 1
   const totalPages = await fetchInvoicesPages(query)
